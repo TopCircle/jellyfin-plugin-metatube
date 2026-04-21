@@ -187,7 +187,12 @@ public class PluginConfiguration : BasePluginConfiguration
     [VisibleCondition(nameof(TranslationEngine), ValueCondition.IsEqual, TranslationEngine.DeepL)]
 #endif
     public string DeepLApiUrl { get; set; } = string.Empty;
-
+#if __EMBY__
+    [DisplayName("DeepLX api url")]
+    [Description("Custom DeepLX api url. (default: https://api.deeplx.org/wdOnh8dZ4hAAQqe81i6e2RwOx1Ba5v7mNcIzaUlKFZU/translate)")]
+    [VisibleCondition(nameof(TranslationEngine), ValueCondition.IsEqual, TranslationEngine.DeepLX)]
+#endif
+    public string DeepLXApiUrl { get; set; } = "https://api.deeplx.org/wdOnh8dZ4hAAQqe81i6e2RwOx1Ba5v7mNcIzaUlKFZU/translate";
 #if __EMBY__
     [DisplayName("OpenAI api key")]
     [VisibleCondition(nameof(TranslationEngine), ValueCondition.IsEqual, TranslationEngine.OpenAi)]
