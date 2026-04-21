@@ -18,7 +18,10 @@
         <Company>MetaTube</Company>
         <Product>MetaTube</Product>
     </PropertyGroup>
-
+    <ItemGroup>
+        <PackageReference Include="System.Memory" Version="4.5.5"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
     <PropertyGroup>
         <TargetFramework Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Release'">net9.0</TargetFramework>
         <TargetFramework Condition="'$(Configuration)'=='Debug.Emby' or '$(Configuration)'=='Release.Emby'">net8.0</TargetFramework>
@@ -41,7 +44,7 @@
         <PackageReference Include="MediaBrowser.Server.Core" Version="4.9.1.80"/>
     </ItemGroup>
 
-    <ItemGroup Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Release'">
+    <ItemGroup>
         <None Remove="Configuration\configPage.html"/>
         <EmbeddedResource Include="Configuration\configPage.html"/>
     </ItemGroup>
